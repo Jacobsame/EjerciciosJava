@@ -4,10 +4,19 @@
  */
 package ejercicio14;
 
-/**
- *
- * @author User
- */
 public class ejercicio14 {
-    
+
+    public static int countBits(int n) {
+        int contador = 0;
+
+        while (n > 0) {
+            if (n % 2 == 1) {
+                contador++;
+            }
+
+            n /= 2;
+        }
+
+        return contador;
+    }
 }

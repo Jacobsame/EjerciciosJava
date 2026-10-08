@@ -1,13 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ejercicio10;
 
-/**
- *
- * @author User
- */
 public class ejercicio10 {
-    
+
+    public static String[] dirReduc(String[] arr) {
+        String[] pila = new String[arr.length];
+        int tamaño = 0;
+
+        for (String direccion : arr) {
+
+            if (tamaño > 0 && sonOpuestas(pila[tamaño - 1], direccion)) {
+                tamaño--;
+            } else {
+                pila[tamaño] = direccion;
+                tamaño++;
+            }
+        }
+
+        String[] resultado = new String[tamaño];
+
+        for (int i = 0; i < tamaño; i++) {
+            resultado[i] = pila[i];
+        }
+
+        return resultado;
+    }
+
+    private static boolean sonOpuestas(String a, String b) {
+        return (a.equals("NORTH") && b.equals("SOUTH")) ||
+               (a.equals("SOUTH") && b.equals("NORTH")) ||
+               (a.equals("EAST") && b.equals("WEST")) ||
+               (a.equals("WEST") && b.equals("EAST"));
+    }
 }

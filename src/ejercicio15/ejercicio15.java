@@ -4,10 +4,15 @@
  */
 package ejercicio15;
 
-/**
- *
- * @author User
- */
 public class ejercicio15 {
-    
+
+    public static int findIt(int[] a) {
+        int resultado = 0;
+
+        for (int numero : a) {
+            resultado ^= numero;
+        }
+
+        return resultado;
+    }
 }

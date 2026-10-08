@@ -1,7 +1,7 @@
 
 package ejercicio2;
 
-public class Kata {
+public class ejercicio2 {
     public static long sumTwoSmallestNumbers(long[] numbers) {
         
         long menor = Long.MAX_VALUE;

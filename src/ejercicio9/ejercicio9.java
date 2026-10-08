@@ -1,3 +1,5 @@
+package ejercicio9;
+
 public class ejercicio9 {
 
     public boolean check(String sentence) {

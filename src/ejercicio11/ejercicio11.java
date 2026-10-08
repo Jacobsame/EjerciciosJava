@@ -4,10 +4,26 @@
  */
 package ejercicio11;
 
-/**
- *
- * @author User
- */
 public class ejercicio11 {
-    
+
+    public static String expandedForm(int num) {
+        String numero = String.valueOf(num);
+        String resultado = "";
+
+        for (int i = 0; i < numero.length(); i++) {
+            char digito = numero.charAt(i);
+
+            if (digito != '0') {
+                int valor = (digito - '0') * (int) Math.pow(10, numero.length() - 1 - i);
+
+                if (!resultado.isEmpty()) {
+                    resultado += " + ";
+                }
+
+                resultado += valor;
+            }
+        }
+
+        return resultado;
+    }
 }

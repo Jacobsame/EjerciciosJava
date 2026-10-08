@@ -4,10 +4,21 @@
  */
 package ejercicio17;
 
-/**
- *
- * @author User
- */
 public class ejercicio17 {
-    
+
+    public static long ipsBetween(String start, String end) {
+        return convertirIP(end) - convertirIP(start);
+    }
+
+    private static long convertirIP(String ip) {
+        String[] partes = ip.split("\\.");
+
+        long resultado = 0;
+
+        for (String parte : partes) {
+            resultado = resultado * 256 + Integer.parseInt(parte);
+        }
+
+        return resultado;
+    }
 }
